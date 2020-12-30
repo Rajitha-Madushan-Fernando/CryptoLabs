@@ -1,0 +1,2 @@
+Hey, let's see whether you can figure out the plaintext for this message using crib dragging!
+This is another message that was encrypted using the same keystream, which makes it insecure.
