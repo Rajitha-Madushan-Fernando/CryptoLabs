@@ -22,7 +22,7 @@ class OTPPwn:
         self.blockpadding = 3  # padding in between ciphertext blocks
         self.blocklenX = self.blockwidth + self.blockpadding  # overall width of a block
         self.blocklenY = self.keylen + self.blockpadding + 2  # overall height of a block
-        self.printable = string.digits + string.uppercase + string.lowercase + string.punctuation + " "  # characters to be printed to screen
+        self.printable = string.digits + string.ascii_uppercase + string.ascii_lowercase + string.punctuation + " "  # characters to be printed to screen
         self.viewOffset = 0  # offset into the file
         self.blockViewOffset = 0  # offset inside a block for blocks that are larger than the screen height, also affects the shown key
         self.key = "\x00" * self.keylen  # key (initialize with zero bytes)
@@ -299,7 +299,7 @@ if __name__ == "__main__":
     else:
         keylen = int(sys.argv[2])
 
-    with open(filename, "r") as f:
+    with open(filename, "r", encoding='mac_roman') as f:
         # size of file
         f.seek(0, 2)
         filesize = f.tell()
