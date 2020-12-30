@@ -285,16 +285,17 @@ class OTPPwn:
 if __name__ == "__main__":
     # display help
     if len(sys.argv) == 2 and sys.argv[1] == "-h":
-        print "Usage: otp_pwn.py [encrypted file] [key length]"
+        print("Usage: otp_pwn.py [encrypted file] [key length]")
+
         sys.exit()
 
     if len(sys.argv) < 2:
-        filename = raw_input("Encrypted file: ")
+        filename = input("Encrypted file: ")
     else:
         filename = sys.argv[1]
 
     if len(sys.argv) < 3:
-        keylen = int(raw_input("Length of the key: "))
+        keylen = int(input("Length of the key: "))
     else:
         keylen = int(sys.argv[2])
 
