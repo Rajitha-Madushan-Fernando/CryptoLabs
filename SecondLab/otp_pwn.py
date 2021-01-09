@@ -299,7 +299,7 @@ if __name__ == "__main__":
     else:
         keylen = int(sys.argv[2])
 
-    with open(filename, "r", encoding='mac_roman') as f:
+    with open(filename, "r") as f:
         # size of file
         f.seek(0, 2)
         filesize = f.tell()

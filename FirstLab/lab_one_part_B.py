@@ -1,19 +1,17 @@
-from Crypto.Util.Padding import pad, unpad
-from Cryptodome.Cipher import AES
-from Cryptodome.Random import get_random_bytes
-
+from Crypto.Cipher import AES
 from datetime import datetime
-BLOCK_SIZE = 32 
-plain_text = "HelloWorld789" 
-cipher_text = b'\x90(\x00\xda\xde\xee\x83\xb8\xfac\x99\x9d\x10\n\xc08\xf9\x95\xad)\x01\xdb\xbe\xc6\xfbM\xbfy\xd7\xca~J'
+plain_text = "HelloWorld123456" 
+cipher_text = b'\x1d\xb8\xd5\xf9a\x7f\xebzX\x98\x8aZ7\xcc\xe7\x06'
 
-data = plain_text.encode('utf-8')
+encoded_plain_text = plain_text.encode('utf-8')
 start_date = datetime.now()
 key = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 def generate_key(position):
     for number in range(0,255):
         cipher = AES.new(bytes(key), AES.MODE_ECB)
-        ciphered_data = cipher.encrypt(pad(data,BLOCK_SIZE))
+        
+        ciphered_data = cipher.encrypt(encoded_plain_text)
+        print(ciphered_data)
         if cipher_text == ciphered_data:
             print([chr(c) for c in key])
             end_date = datetime.now()
