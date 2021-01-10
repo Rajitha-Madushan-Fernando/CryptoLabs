@@ -8,10 +8,10 @@ start_date = datetime.now()
 key = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 def generate_key(position):
     for number in range(0,255):
+        key[-1] = number
         cipher = AES.new(bytes(key), AES.MODE_ECB)
-        
         ciphered_data = cipher.encrypt(encoded_plain_text)
-        print(ciphered_data)
+        #print(ciphered_data)
         if cipher_text == ciphered_data:
             print([chr(c) for c in key])
             end_date = datetime.now()

@@ -11,3 +11,4 @@ print(cipher_text_two)
 #wb is write binary
 with open("file.bin", "wb") as file:
     file.write(cipher_text_one+cipher_text_two)
+ 
