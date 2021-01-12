@@ -1,7 +1,7 @@
 from Crypto.Cipher import AES
 from datetime import datetime
 plain_text = "HelloWorld123456" 
-cipher_text = b'\x1d\xb8\xd5\xf9a\x7f\xebzX\x98\x8aZ7\xcc\xe7\x06'
+cipher_text = b'\x01\x1aW]\xa6\x02\x8f\xed\xd0`\x84\x0cn\x9aW\x1f'
 
 encoded_plain_text = plain_text.encode('utf-8')
 start_date = datetime.now()
